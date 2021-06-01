@@ -22,7 +22,7 @@ class EmployeeImport implements ToModel,WithHeadingRow
  
     public function model(array $row)
     {
-        dd($row);exit;
+        
         return new Employee([
             'code'             => $row['Code'],
             'name'             => $row['name'],
