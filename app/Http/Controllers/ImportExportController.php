@@ -15,17 +15,17 @@ class ImportExportController extends Controller
    
     public function importFile(Request $request) 
     {
-        $validator = Validator::make($request->all(), [
-            'file' => 'required',
-                ]
-        );
+        // $validator = Validator::make($request->all(), [
+        //     'file' => 'required',
+        //         ]
+        // );
         
-        if ($validator->fails()) {
-            $data = ['error'=> trans('messages.validation_error').'<br>'.$validator->messages()->first(),'errors'=>$validator->errors()];
-           return redirect()->back()->withInput()->with($data);
-        }
+        // if ($validator->fails()) {
+        //     $data = ['error'=> trans('messages.validation_error').'<br>'.$validator->messages()->first(),'errors'=>$validator->errors()];
+        //    return redirect()->back()->withInput()->with($data);
+        // }
         
-        Excel::import(new EmployeeImport, $request->file);
+        Excel::import(new EmployeeImport,$request->file('file'));
         return back();
     }
 

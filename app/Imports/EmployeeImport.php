@@ -5,14 +5,11 @@ namespace App\Imports;
 use App\Models\Employee;
 use Illuminate\Support\Facades\Hash;
 use Maatwebsite\Excel\Concerns\ToModel;
-use Illuminate\Validation\Rule;
-use Maatwebsite\Excel\Concerns\WithValidation;
-use Maatwebsite\Excel\Concerns\Importable;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
 class EmployeeImport implements ToModel,WithHeadingRow
 {
-    use Importable;
+    // use Importable;
     /**
     * @param array $row
     *
@@ -22,9 +19,9 @@ class EmployeeImport implements ToModel,WithHeadingRow
  
     public function model(array $row)
     {
-        
+        // dd($row);die;
         return new Employee([
-            'code'             => $row['Code'],
+            'code'             => $row['code'],
             'name'             => $row['name'],
             'department'       => $row['department'],
             'qualification'    => $row['qualification'],

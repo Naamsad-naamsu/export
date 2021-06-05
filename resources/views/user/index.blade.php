@@ -16,7 +16,7 @@
                                             <input type="file" name="file" /></span>
                                         </div>
                                     </div>
-                                    <button class="btn btn-danger pull-left">Click to Import</button>
+                                    <button type="submit" class="btn btn-danger pull-left">Click to Import</button>
                                 </form>
                                 <a href="{{ url('export-File') }}" class="btn btn-success pull-left">Click to Export</a>
            
